@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import View from './View';
+import Update from './Update';
+import { Hero } from './types';
 
-function App() {
+const App: React.FC = () => {
+  const [heroes, setHeroes] = useState<Hero[]>(() => {
+    const savedHeroes = localStorage.getItem('heroes');
+    return savedHeroes ? JSON.parse(savedHeroes) : [
+      { imgSrc: '/public/dr.jpeg', text: 'Dr. Strange' },
+      { imgSrc: '/public/Witch.jpg', text: 'Captain' },
+      { imgSrc: '/public/aqua.jpeg', text: 'Hulk' },
+      { imgSrc: '/public/goku.jpg', text: 'Spider' },
+      { imgSrc: '/public/bat.jpeg', text: 'Batman' },
+      { imgSrc: '/public/super.jpg', text: 'Superman' },
+      { imgSrc: '/public/buri.jpeg', text: 'Buri Buri Zaimon' },
+      { imgSrc: '/public/thor.jpeg', text: 'Thor' },
+      { imgSrc: '/public/LOKI.jpg', text: 'Loki' },
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('heroes', JSON.stringify(heroes));
+  }, [heroes]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" render={() => <Dashboard heroes={heroes} />} />
+          <Route path="/View" render={() => <View heroes={heroes} />} />
+          <Route path="/Update" render={() => <Update heroes={heroes} setHeroes={setHeroes} />} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

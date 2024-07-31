@@ -1,0 +1,40 @@
+.HeroBox {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .HeroBox:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .HeroImg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .HeroImg:hover {
+    opacity: 0.9;
+  }
+  
+  .HeroBox p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .HeroBox p span {
+    display: block;
+  }
+  
+  .hero-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  

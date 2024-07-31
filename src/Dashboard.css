@@ -1,0 +1,113 @@
+.dashboard-container {
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #3494e6, #ec6ead);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .dashboard-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dashboard-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .dashboard-buttons button:focus {
+    outline: none;
+  }
+  
+  .line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .line .first,
+  .line .second,
+  .line .third,
+  .line .fourth {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .line .first {
+    background-color: #ffc107;
+  }
+  
+  .line .second {
+    background-color: #28a745;
+  }
+  
+  .line .third {
+    background-color: #007bff;
+  }
+  
+  .line .fourth {
+    background-color: #dc3545;
+  }
+  
+  .line .first .HeroBox,
+  .line .second .HeroBox,
+  .line .third .HeroBox,
+  .line .fourth .HeroBox {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .line .first .HeroBox:hover,
+  .line .second .HeroBox:hover,
+  .line .third .HeroBox:hover,
+  .line .fourth .HeroBox:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .HeroImg {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .HeroBox p {
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .HeroBox p span {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .line .first,
+    .line .second,
+    .line .third,
+    .line .fourth {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
